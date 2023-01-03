@@ -1,1 +1,1 @@
-# next-js-projects
+# Google clone on Next.js
