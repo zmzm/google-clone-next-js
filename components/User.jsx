@@ -17,7 +17,7 @@ const User = () => {
     )
   }
   return (
-    <button className='bg-blue-500 text-white px-6 py-2  font-medium rounded-md hover:brightness-105 hover:shadow-md' onClick={signIn}>Sign in</button>
+    <button className='bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md' onClick={signIn}>Sign in</button>
   )
 }
 

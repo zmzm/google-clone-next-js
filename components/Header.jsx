@@ -1,8 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import User from './User'
+import React from 'react';
+import User from './User';
 
-const Header = props => {
+const Header = () => {
   return (
     <header className='flex justify-between p-5 text-sm text-gray-700'>
       <div className='header-link-container'>
@@ -17,7 +16,5 @@ const Header = props => {
     </header>
   )
 }
-
-Header.propTypes = {}
 
 export default Header
