@@ -1,5 +1,7 @@
 # Google clone using Next.js and Taiwind CSS
 
+<img src="images/app.png" alt="image-capture" width="1000"/>
+
 ## Getting Started
 
 First, run the development server:
