@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { MagnifyingGlassIcon, MicrophoneIcon } from '@heroicons/react/24/solid';
 import Logo from './Logo';
+import SearchInput from './SearchInput';
 
 const Body = () => {
   const router = useRouter();
@@ -30,16 +30,11 @@ const Body = () => {
   return (
     <form className="flex flex-col items-center mt-40">
       <Logo />
-      <div className="body-search">
-        <MagnifyingGlassIcon className="h-5 mr-3" />
-        <input
-          className="flex-grow focus:outline-none"
-          type="text"
-          ref={searchInputRef}
-          onKeyDown={handleKeyDown}
-        />
-        <MicrophoneIcon className="h-5 ml-3" />
-      </div>
+      <SearchInput
+        ref={searchInputRef}
+        onHandleSearch={handleKeyDown}
+        className="mt-20 mb-16 "
+      />
       <div className="flex space-x-4">
         <button type="button" className="body-btn" onClick={handleSearch}>
           Search with Google
