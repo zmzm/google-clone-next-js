@@ -1,4 +1,4 @@
-# Google clone using Next.js and Taiwind CSS
+# Google clone using Next.js and Tailwind CSS
 
 <img src="images/app.png" alt="image-capture" width="1000"/>
 
