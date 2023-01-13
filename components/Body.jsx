@@ -1,42 +1,30 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Logo from './Logo';
 import SearchInput from './SearchInput';
 
 const Body = () => {
   const router = useRouter();
-  const searchInputRef = useRef(null);
+  const [url, setUrl] = useState(null);
 
-  const handleSearch = (event) => {
+  const goToPage = (event) => {
     event.preventDefault();
-    const {
-      current: { value },
-    } = searchInputRef;
-    const trimedValue = value.trim();
 
-    if (trimedValue) {
-      const term = trimedValue.split(' ').join('+');
-
-      router.push(`/search?q=${term}`);
+    if (url) {
+      router.push(url);
     }
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch(event);
-    }
+  const handleSearch = ({ path }) => {
+    setUrl(path);
   };
 
   return (
     <form className="flex flex-col items-center mt-40">
       <Logo />
-      <SearchInput
-        ref={searchInputRef}
-        onHandleSearch={handleKeyDown}
-        className="mt-20 mb-16 "
-      />
+      <SearchInput onHandleSearch={handleSearch} className="mt-20 mb-16 " />
       <div className="flex space-x-4">
-        <button type="button" className="body-btn" onClick={handleSearch}>
+        <button type="button" className="body-btn" onClick={goToPage}>
           Search with Google
         </button>
         <button type="button" className="body-btn">

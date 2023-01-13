@@ -11,12 +11,7 @@ const SearchHeader = () => {
     <header className="sticky top-0">
       <div className="flex w-full p-6 pl-32 items-center">
         <Logo width={92} height={30} className="object-contain" />
-        <SearchInput
-          ref={null}
-          onHandleSearch={() => {}}
-          className="ml-10"
-          defaultValue={router.query.q}
-        />
+        <SearchInput className="ml-10" defaultValue={router.query.q} />
         <User />
       </div>
     </header>
