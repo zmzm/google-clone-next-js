@@ -1,8 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Logo from './Logo';
-import SearchInput from './SearchInput';
-import User from './User';
+import Logo from '../Logo';
+import SearchInput from '../SearchInput';
+import User from '../User';
+import Options from './Options';
 
 const SearchHeader = () => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const SearchHeader = () => {
         <SearchInput className="ml-10" defaultValue={router.query.q} />
         <User />
       </div>
+      <Options />
     </header>
   );
 };

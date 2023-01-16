@@ -16,7 +16,9 @@ const SearchInput = ({ className, defaultValue, onHandleSearch }) => {
 
     if (trimedValue) {
       const term = trimedValue.split(' ').join('+');
-      const path = `/search?q=${term}`;
+      const path = `/search?q=${term}&searchType=${
+        router.query.searchType || ''
+      }`;
 
       onHandleSearch && onHandleSearch({ value: trimedValue, path });
       setUrl(path);
