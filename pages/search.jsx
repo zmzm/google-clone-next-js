@@ -1,16 +1,20 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import SearchHeader from '../components/SearchHeader';
 import dataMock from '../mocks/dataMock.json';
+import SearchResults from '../components/SearchResults';
 
-const Search = ({ data }) => {
-  console.log(data);
+const Search = ({ data: { searchInformation } }) => {
+  const router = useRouter();
+
   return (
     <div>
       <Head>
-        <title>Search results</title>
+        <title>{router.query.q} - Search results</title>
       </Head>
       <SearchHeader />
+      <SearchResults searchInformation={searchInformation} />
     </div>
   );
 };
