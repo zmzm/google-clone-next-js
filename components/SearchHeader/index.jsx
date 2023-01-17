@@ -9,7 +9,7 @@ const SearchHeader = () => {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 pl-32 items-center">
         <Logo width={92} height={30} className="object-contain" />
         <SearchInput className="ml-10" defaultValue={router.query.q} />
