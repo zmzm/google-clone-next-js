@@ -19,6 +19,17 @@ const Body = () => {
     setUrl(path);
   };
 
+  const randomSearch = async () => {
+    const [randomWord] = await fetch(
+      'https://random-word-api.herokuapp.com/word?number=1'
+    ).then((result) => result.json());
+
+    if (randomWord) {
+      const path = `/search?q=${randomWord}&searchType=`;
+      router.push(path);
+    }
+  };
+
   return (
     <form className="flex flex-col items-center mt-40">
       <Logo />
@@ -27,7 +38,7 @@ const Body = () => {
         <button type="button" className="body-btn" onClick={goToPage}>
           Search with Google
         </button>
-        <button type="button" className="body-btn">
+        <button type="button" className="body-btn" onClick={randomSearch}>
           I&apos;m feeling lucky
         </button>
       </div>
